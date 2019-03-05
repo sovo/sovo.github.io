@@ -1,7 +1,87 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head></head>
+<head>
+<meta charset="utf-8">
+<title>Hexy</title>
+<style>
+.hexy{
+	height:200px;
+	width:auto;
+	position:relative;
+}
+.hexy div[class|=track]{
+	height:10px;
+	width:100px;
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	margin:auto;
+	transition:1s transform;
+}
+.hexy:hover div.track-2{
+	transform:rotate(30deg);
+}
+.hexy:hover div.track-3{
+	transform:rotate(60deg);
+}
+.hexy:hover div.track-4{
+	transform:rotate(90deg);
+}
+.hexy:hover div.track-5{
+	transform:rotate(120deg);
+}
+.hexy:hover div.track-6{
+	transform:rotate(150deg);
+}
+.hexy div[class|=sli]{
+	height:100%;
+	width:10%;
+	border-radius:50%;
+	transition:1s border-radius;
+	animation:back-forth 1s ease-in-out alternate infinite;
+}
+.hexy:active div[class|=sli]{
+	border-radius:0;
+}
+.hexy div.sli-1{
+	background-color:tomato;
+}
+.hexy div.sli-2{
+	background-color:lawngreen;
+	animation-delay:166ms;
+}
+.hexy div.sli-3{
+	background-color:orange;
+	animation-delay:333ms;
+}
+.hexy div.sli-4{
+	background-color:turquoise;
+	animation-delay:500ms;
+}
+.hexy div.sli-5{
+	background-color:magenta;
+	animation-delay:666ms;
+}
+.hexy div.sli-6{
+	background-color:dodgerblue;
+	animation-delay:833ms;
+}
+@keyframes back-forth{
+	to{transform:translate(900%);}
+}
+</style>
+</head>
+
 <body>
-<p>It is a test.</p>
+<div class="hexy">
+	<div class="track-1"><div class="sli-1"></div></div>
+	<div class="track-2"><div class="sli-2"></div></div>
+	<div class="track-3"><div class="sli-3"></div></div>
+	<div class="track-4"><div class="sli-4"></div></div>
+	<div class="track-5"><div class="sli-5"></div></div>
+	<div class="track-6"><div class="sli-6"></div></div>
+</div>
 </body>
 </html>
